@@ -1,7 +1,7 @@
 # Temporary-Files-Remover
 This is a python script embed with a `data.json` file which will help you in removing any temporary files you want. It basically will delete every file inside your temporary folder based on your customized settings. If you wish the code to run faster, then make sure that your temporary files folder is in your default disk, in most cases it is the `C:\` disk.
 
-Customzing the `data.json` file:
+Customizing the `data.json` file:
 
 This is the default view of the file:
 {"folder_name": "temp-files", "folder_location": "", "directory": "", "delDelay": "86400"}
