@@ -27,33 +27,33 @@ Different Log Readings:
 
 Here's an example of all the logs:
 
-**INFO:**
-The temp-file-checker file is now on and working. All logs will come up here!
-Time: 07/02/22, 14:02:21
+**INFO:**<br>
+The temp-file-checker file is now on and working. All logs will come up here!<br>
+Time: 07/02/22, 14:02:21<br>
 
-**ERROR:**
-No directory found with the name 'test-dir'
-Time: 07/02/22, 14:02:21
+**ERROR:**<br>
+No directory found with the name 'test-dir'<br>
+Time: 07/02/22, 14:02:21<br>
 
-**WARNING:**
-A proper format for delDelay in seconds wasn't entered. A default value of 86400s has been restored.
-Value Entered: test-value
-Time: 07/02/22, 14:02:38
+**WARNING:**<br>
+A proper format for delDelay in seconds wasn't entered. A default value of 86400s has been restored.<br>
+Value Entered: test-value<br>
+Time: 07/02/22, 14:02:38<br>
 
-**DEBUG:**
-Restored the default folder_name.
-Old: \invalid-file\
-Current: temp-files
-Time: 07/02/22, 14:02:45
+**DEBUG:**<br>
+Restored the default folder_name.<br>
+Old: \invalid-file\<br>
+Current: temp-files<br>
+Time: 07/02/22, 14:02:45<br>
 
-**DEBUG:**
-Restored the default data.json blueprint.
-Time: 07/02/22, 14:03:56
+**DEBUG:**<br>
+Restored the default data.json blueprint.<br>
+Time: 07/02/22, 14:03:56<br>
 
-**CRITICAL:**
-File Removed: C:\\temp-files\test-file.txt
-Date Modified: 07/02/22, 14:05
-Date Deleted: 07/02/22, 14:05:22
+**CRITICAL:**<br>
+File Removed: C:\\temp-files\test-file.txt<br>
+Date Modified: 07/02/22, 14:05<br>
+Date Deleted: 07/02/22, 14:05:22<br>
 
 Self Error Handling:
 If the `data.json` file is empty, then you need to make it an empty json file. Meaning, just type `{}` and save it, then the code should function properly.
