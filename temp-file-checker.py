@@ -1,16 +1,17 @@
 import json, os, subprocess, logging
 from datetime import datetime as dt
 from datetime import timedelta as td
-
-logging.basicConfig(filename='logs.log', format='%(levelname)s:\n%(message)s', encoding='utf-8', level=logging.DEBUG)
-date_format = dt.now().strftime('%D, %H:%M:%S')
-
+try:
+        
+    logging.basicConfig(filename='logs.log', format='%(levelname)s:\n%(message)s', encoding='utf-8', level=logging.DEBUG)
+    date_format = dt.now().strftime('%D, %H:%M:%S')
+except:
+    pass
 def open_json():
     with open("data.json", "r") as f:
         data = json.load(f)
         keys = ["folder_name", "folder_location", "directory", "delDelay"]
         if set(data.keys()) == set(keys):
-            log_message = None
             folder_name = data["folder_name"]
             for i in ['\\','/',':','*','?','"','<','>','|']:
                 if i in folder_name:
@@ -42,10 +43,9 @@ def open_json():
             f.close()
             with open("data.json", "w") as f:
                 json.dump({"folder_name": folder_name, "folder_location": "", "directory": drives, "delDelay": "86400"}, f)
-                f.close()
-            log_message = "Restored the default data.json blueprint.\n"            
-            logging.debug(log_message+f"Time: {date_format}\n")
-    return drives, folder_name, log_message
+                f.close()            
+            logging.debug(f"Restored the default data.json blueprint.\nTime: {date_format}\n")
+    return drives, folder_name
 
 
 class Find():
@@ -86,7 +86,7 @@ class Find():
             location = data["folder_location"]
             if location is None or location=="":
                 return None
-            items = [f"{location}\\{o}" for o in os.listdir(path=location)]
+            items = [f"{location}\\{o}" for o in os.listdir(path=location)]               
         else:
             instance = Find(rootdir, target)
             location = instance.find_folder(rootdir, target)
@@ -108,14 +108,17 @@ def time_check(items):
     for file in items:
         times[file] = dt.fromtimestamp(os.path.getmtime(file))
     return times
-
+count = 0
 def combine():
+    global count
     info = open_json()
     instance = Find(info[0], info[1])
     items = instance.find_item(info[0], info[1])
-    if items is None:
+    items = None
+    if items is None and count == 0:
         times = None
-        logging.error(f"No directory found with the name '{combine()[1][1]}'\nTime: {date_format}\n")
+        count += 1
+        logging.error(f"No directory found with the name '{info[1]}'\nTime: {date_format}\n")
     else:
         times = time_check(items)
         with open('data.json', 'r') as f:
@@ -136,6 +139,7 @@ def combine():
 
 def final():
     if __name__ == "__main__":
+        global count
         logging.info(f"The temp-file-checker file is now on and working. All logs will come up here!\nTime: {date_format}\n")
         while True:
             try:
@@ -148,7 +152,8 @@ def final():
                         if time_passed >= k and '.' in j and os.path.isfile(j):
                             if os.path.exists(j):
                                 os.remove(j)
-                                logging.critical(f"File Removed: {j}\nDate Modified: {k.strftime(date_format)}\nDate Deleted: {date_format}\n")        
+                                logging.critical(f"File Removed: {j}\nDate Modified: {k.strftime(date_format)}\nDate Deleted: {date_format}\n")   
+                                count = 0     
             except:
                 pass
 final()
