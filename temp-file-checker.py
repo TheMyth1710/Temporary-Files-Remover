@@ -15,7 +15,7 @@ def open_json():
             folder_name = data["folder_name"]
             for i in ['\\','/',':','*','?','"','<','>','|']:
                 if i in folder_name:
-                    logging.debug(f"Restored the default folder_name.\nOld: {folder_name}\nCurrent: temp-files\n")
+                    logging.debug(f"Restored the default folder_name.\nOld: {folder_name}\nCurrent: temp-files\nTime: {date_format}\n")
                     data["folder_name"] = "temp-files"
                     folder_name = "temp-files"
                     f.close()
@@ -63,7 +63,7 @@ class Find():
                 for path, dirnames, filnames in os.walk(r):
                     for dirname in dirnames:
                         full_path = os.path.join(path, dirname)
-                        if target in full_path:
+                        if target in full_path and 'Recycle.Bin' not in full_path:
                             data["folder_location"] = full_path
                             json.dump(data, file)
                             file.close()
@@ -114,7 +114,6 @@ def combine():
     info = open_json()
     instance = Find(info[0], info[1])
     items = instance.find_item(info[0], info[1])
-    items = None
     if items is None and count == 0:
         times = None
         count += 1
