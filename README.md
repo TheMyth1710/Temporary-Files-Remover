@@ -19,11 +19,11 @@ This file is basically the place where every action of the code will be written 
 
 Different Log Readings:
 
-CRITICAL: This is just the log indicating that a file in the temporary folder has been deleted. *Even from the recycle bin, put in less efforts*
-DEBUG: This log type means there was a problem in one of the Key Values and has been restored to default.
-ERROR: This is an error meaning one of the Key Values has not been found/is incorrect. *However if there is a "folder_location" value then usually the error won't be thrown. In such cases, reset the "folder_location" to `""` for checking if your temporary file exists or not. In Error Logs, the code doesn't restore values, to avoid further errors, thus it is to be done manually*
-INFO: This is just an information indicating that the code is on and running well. *Unless you do some mischieve with it*
-WARNING: This is just a warning indicating that you misentered/altered a value in the `data.json` incorrectly. *In most cases the values are restored to default, and if not then it is highly recommend to restore them to the default. If you don't know what the default values are, just overwrite the whole `data.json` file to `{}`.*
+**CRITICAL:** This is just the log indicating that a file in the temporary folder has been deleted. *Even from the recycle bin, put in less efforts*
+**DEBUG:** This log type means there was a problem in one of the Key Values and has been restored to default.
+**ERROR:** This is an error meaning one of the Key Values has not been found/is incorrect. *However if there is a "folder_location" value then usually the error won't be thrown. In such cases, reset the "folder_location" to `""` for checking if your temporary file exists or not. In Error Logs, the code doesn't restore values, to avoid further errors, thus it is to be done manually*
+**INFO:** This is just an information indicating that the code is on and running well. *Unless you do some mischieve with it*
+**WARNING:** This is just a warning indicating that you misentered/altered a value in the `data.json` incorrectly. *In most cases the values are restored to default, and if not then it is highly recommend to restore them to the default. If you don't know what the default values are, just overwrite the whole `data.json` file to `{}`.*
 
 Here's an example of all the logs:
 
