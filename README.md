@@ -31,28 +31,28 @@ Here's an example of all the logs:
 The temp-file-checker file is now on and working. All logs will come up here!
 Time: 07/02/22, 14:02:21
 
-ERROR:
+**ERROR:**
 No directory found with the name 'test-dir'
 Time: 07/02/22, 14:02:21
 
-WARNING:
+**WARNING:**
 A proper format for delDelay in seconds wasn't entered. A default value of 86400s has been restored.
 Value Entered: test-value
 Time: 07/02/22, 14:02:38
 
-DEBUG:
+**DEBUG:**
 Restored the default folder_name.
 Old: \invalid-file\
 Current: temp-files
 Time: 07/02/22, 14:02:45
 
-DEBUG:
+**DEBUG:**
 Restored the default data.json blueprint.
 Time: 07/02/22, 14:03:56
 
-CRITICAL:
+**CRITICAL:**
 File Removed: C:\\temp-files\test-file.txt
-Date Modified: 07/02/22, 14:05:07
+Date Modified: 07/02/22, 14:05
 Date Deleted: 07/02/22, 14:05:22
 
 Self Error Handling:
