@@ -1,5 +1,5 @@
 # Temporary-Files-Remover
-This is a python script embed with a `data.json` file which will help you in removing any temporary files you want. It basically will delete every file inside your temporary folder based on your customized settings. If you wish the code to run faster, then make sure that your temporary files folder is in your default disk, in most cases it is the `C:\` disk.
+This is a python script embed with a `data.json` file which will help you in removing any temporary files you want. It basically will delete every file inside your temporary folder based on your customized settings. If you wish the code to run faster, then make sure that your temporary files folder is in your default disk, in most cases it is the `C:\` disk. The software is currently only supported on Windows. For a never ending functionality, download the file as a `.pyw` extension and make sure to add it to the startup folder. [Click here](https://support.microsoft.com/en-us/windows/add-an-app-to-run-automatically-at-startup-in-windows-10-150da165-dcd9-7230-517b-cf3c295d89dd#:~:text=With%20the%20file%20location%20open,location%20to%20the%20Startup%20folder.) to learn how to add a file to the startup folder.
 
 Customizing the `data.json` file:
 
